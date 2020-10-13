@@ -1,0 +1,24 @@
+nwg_portfolio.form:
+  path: '/user/{user}/portfolio/sort'
+  defaults:
+    _form: '\Drupal\nwg_util\Form\NWGPortfolioForm'
+    _title: 'Portfolio Sort'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
+    parameters:
+      user:
+        type: entity:user
+nwg_pricing.form:
+  path: '/user/{user}/portfolio/pricing'
+  defaults:
+    _form: '\Drupal\nwg_util\Form\NWGPricingForm'
+    _title: 'Pricing and Inventory'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
+    parameters:
+      user:
+        type: entity:user

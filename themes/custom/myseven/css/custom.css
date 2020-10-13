@@ -1,0 +1,112 @@
+table caption {
+    font-size: 140%;
+    background: #ddd;
+    padding: 12px 0;
+    text-align: center;
+}
+#block-usermenu {
+    float: right;
+}
+.view-portfolio .view-header {
+    padding-top: 20px;
+    text-align: right;
+}
+.view-portfolio table {
+    margin: 20px 0;
+    padding: 5px 0 5px;
+}
+.view-portfolio caption {
+    font-size: 110%;
+    background: #ccc;
+    text-transform: uppercase;
+}
+.view-portfolio caption>div {
+    padding: 10px;
+}
+.view-portfolio caption h4 {
+    margin: 0;
+}
+.view-portfolio caption ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.view-portfolio caption li {
+    display: inline-block;
+}
+.view-portfolio caption ul li.actions {
+    float: right;
+}
+.view-portfolio caption ul li.actions ul li {
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+.view-portfolio tr {
+    background: #ddd;
+    border-top: 2px solid #fff;
+    padding: 5px;
+}
+.view-portfolio .Disabled {
+    background: #ea6b6b;
+}
+.view-portfolio td {
+    width: 13%;
+    text-align: center;
+}
+.view-portfolio td.views-field-field-item-image {
+    width: 8%;
+    text-align: left;
+}
+.view-portfolio td.views-field-field-materials {
+    width: 27%;
+    text-align: left;
+}
+.nwg-portfolio-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.nwg-portfolio-form td {
+    padding: 0;
+}
+.nwg-portfolio-form tr {
+    padding: 0;
+}
+.view-artist-portfolio {
+    max-width: 800px;
+    margin: 1em auto 0;
+}
+.view-user-menu {
+    text-align: center;
+}
+.view-user-menu .views-field {
+    margin: 0 1em;
+    font-size: 130%;
+}
+.menu--user {
+    float: right;
+}
+.menu--user ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 1em;
+}
+.account-block {
+    background: #e0e0d8;
+    text-align: center;
+    width: 90%;
+    margin: 1em 0;
+    padding: 1em;
+}
+.account-block .view-content {
+    font-size: 120%;
+}
+.block-views-blockcontact-list-block-1 {
+    width: 80%;
+    margin: 0 auto;
+}
+.block-views-blockcontact-list-block-1 h2 {
+    text-align: center;
+}
+.status-inactive {
+    color: red;
+}

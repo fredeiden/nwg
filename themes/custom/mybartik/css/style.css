@@ -1,0 +1,290 @@
+body {
+    background: #fff;
+}
+.main-content .section {
+    padding: 0;
+}
+.layout-main {
+    margin-top: 0;
+}
+#block-mybartik-branding {
+    position: relative;
+    width: 200px;
+    z-index: 500;
+}
+.region-header .search-block-form {
+    position: relative;
+    z-index: 999;
+}
+#block-mobilelogo {
+    float: none;
+    margin: 1em 0 0;
+    text-align: left;
+    max-width: 85%;
+}
+.featured-top, .featured-top.is-ultimenu-canvas-on {
+    background: #292929;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: -8px; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 9999;
+}
+.region-header .block:not(.site-branding) {
+    margin: 3em 0 0;
+}
+
+.site-footer, .site-footer ul {
+    text-align: center;
+}
+.site-footer .block,
+.site-footer__top h2,
+.site-footer__top .content li a {
+    border: none;
+    margin: 0;
+}
+.site-footer__top .region {
+    width: 33%;
+    padding: 0;
+}
+.site-footer__top .content li a {
+    font-size: 115%;
+    padding: 0.3em 0;
+    text-indent: initial;
+}
+.site-footer__top .region-footer-second {
+    font-size: 130%;
+}
+.site-footer__top .region-footer-fourth {
+    width: 100%;
+    float: none;
+    clear: both;
+}
+.site-footer__top .region-footer-fourth p {
+    margin: 0;
+}
+
+.page-title {
+    text-align: center;
+}
+.page-title,
+.red-underline {
+    border-bottom: 1px solid #E8112D;
+}
+.red-character {
+    color: #E8112D;
+}
+
+.overlay-title {
+    max-width: 300px;
+    margin: 0 auto;
+}
+.masonry {
+    margin: 0 auto;
+}
+.masonry-item {
+    max-width: 450px;
+}
+.blazy--grid a {
+    display: block;
+}
+.blazy--grid .views-field-field-item-image {
+    text-align: center;
+}
+.view-centered {
+    text-align: center;
+}
+.view-artists h3 {
+    margin: 5px;
+}
+.with-attribution .views-field-field-artist {
+    text-align: right;
+    font-size: 120%;
+    background: #292929;
+    position: relative;
+    top: -5px;
+}
+.with-attribution .views-field-field-artist a {
+    padding-right: 5px;
+    color: #fff;
+}
+
+.home-page-promo .view-header {
+    background-image: url(../images/home.jpg);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 350px;
+    padding: 100px 2em 0;
+    text-align: center;
+    font-size: 130%;
+    color: #000;
+}
+.home-page-promo .view-content {
+    max-width: 960px;
+    margin: 1em auto 0;
+}
+.home-page-promo .promo-image {
+    text-align: center;
+    margin: 0 1px;
+}
+.home-page-promo .promo-title {
+    position: relative;
+    top: -25px;
+    background: #222;
+    margin: 0 1px;
+    padding: 2px 0;
+    text-align: center;
+}
+.home-page-promo .promo-title a {
+    color: #fff;
+    font-size: 120%;
+}
+.path-user .block-views {
+    position: relative;
+    background: rgba(87, 74, 74, 0.31);
+    height: 400px;
+    margin: 0 2px 0;
+    padding: 1em 2em;
+}
+.path-user .block-views h2 {
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    padding: 1em 0;
+}
+.user-button {
+    position: absolute;
+    text-align: center;
+    bottom: 3em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #2774AE;
+    width: 300px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 110%;
+    border: 1px solid #111;
+    border-radius: 1em;
+}
+.pager {
+    text-align: center;
+}
+.block-views-blockadditional-design-items-block-1,
+.block-views-blockadditional-artist-items-block-1,
+.block-views-blockadditional-type-items-block-1 {
+    width: 55%;
+    margin: 0 auto;
+    text-align: center;
+}
+.block-views-blocktaxonomy-artists-block-1 h2 {
+    max-width: 50%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E8112D;
+}
+.search-table {
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: 120%;
+}
+.search-table tr {
+    background: #fff;
+}
+.search-table .p {
+    padding-top: 0.5em;
+}
+.search-table h2 {
+    margin: 0;
+}
+.lc {
+    text-transform: lowercase;
+}
+.page-node-type-item .region-content,
+.page-node-type-page .region-content {
+    text-align: center;
+}
+.page-node-type-item .views-field-body {
+    margin: 1em;
+    font-style: italic;
+}
+.view-float-image .views-field-field-promotional-image {
+    float: left;
+    margin: 1em 2em 1em 2em;
+}
+.inline-list {
+    text-align: center;
+}
+.inline-list ul li {
+    display: inline-block;
+}
+.block-views h2 {
+    text-align: center;
+}
+.block-views-blockartist-details-block-4 {
+    clear: both;
+    text-align: center;
+}
+.view-limit-width {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.artist-card {
+    max-width: 380px;
+    margin: 0 auto;
+    background: #eee;
+}
+.artist-card h2 {
+    border-bottom: 1px solid #fff;
+    padding-top: 5px;
+}
+.artist-card .column {
+    float: left;
+}
+.artist-card .column-one {
+    width: 35%;
+    padding: 5px;
+}
+.artist-card .column-two {
+    width: 60%;
+    padding-top: 20px;
+}
+.artist-contact a {
+    text-transform: uppercase;
+    display: block;
+    font-size: 110%;
+    margin: 2px auto;
+    padding: 5px 0;
+}
+.artist-contact a:hover {
+    background: #d9d9d9;
+    color: #000;
+}
+.clear-me:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.my-grid {
+    text-align: center;
+}
+.my-grid .view-content {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.my-grid .views-row {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24%;
+}
+.page-node-type-article .region-content {
+    text-align: center;
+    margin: 0 0.5em;
+}

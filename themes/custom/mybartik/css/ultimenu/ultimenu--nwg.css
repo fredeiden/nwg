@@ -1,0 +1,85 @@
+/**
+ * @file
+ * Skin based on safe CSS file name: ultimenu--nwg.
+ */
+
+@media (min-width: 851px) {
+    .ultimenu--nwg a {
+	color: #222;
+    }
+}
+.is-ultimenu-canvas--active .is-ultimenu-canvas-off li > a {
+    color: #fff;
+}
+.ultimenu--nwg .views-field-name a {
+    display: block;
+    text-align: center;
+}
+.ultimenu--nwg img {
+    display: block;
+    margin: 0 auto 1em;
+}
+.slick img {
+    margin: 0 auto;
+}
+.slide__thumbnail {
+    margin: 0 1px;
+}
+.ultimenu--nwg .ultimenu__link {
+  color: #222;
+  z-index: 103; /* Above the flyout z-index: 102 */
+  font-size: 120%;
+  
+}
+.ultimenu--htb .ultimenu__flyout, .ultimenu--htb .ultimenu__region {
+    border-radius: 0;
+    text-align: center;
+}
+.ultimenu__region {
+    padding: 0;
+}
+.slick-arrow::before {
+    color: #222;
+    font-size: 2rem;
+}
+button.button.button--ultimenu {
+    right: 5px;
+    top: 5px;
+    border-radius: 0;
+    border: none;
+}
+button.button.button--ultimenu,
+button.button.button--ultimenu:hover,
+button.button.button--ultimenu:focus,
+button.button.button--ultimenu:visited {
+    background: transparent;
+}
+button.button--ultimenu .bars, button.button--ultimenu .bars::before, button.button--ultimenu .bars::after {
+    background: #2774AE;
+}
+
+/* @todo is-active https://www.drupal.org/node/2281785 */
+.ultimenu--nwg > li:hover > a,
+/** Unfortunaly is-active is unreliable, it goes on scroll/ ajax. */
+.ultimenu--nwg .is-ultimenu-active,
+.ultimenu--nwg .is-active-trail > a {
+  font-weight: 500;
+}
+
+/**
+ * 944px below with 16px base font.
+ */
+@media all and (max-width: 58.999em) {
+  .ultimenu--dark .ultimenu__link {
+    border-top: 1px solid #333;
+  }
+}
+
+/** 944px with 16px base font. */
+@media only screen and (min-width: 59em) {
+  .ultimenu--hover.ultimenu--dark li:hover > .ultimenu__flyout,
+  .ultimenu--hover.ultimenu--dark li a:focus + .ultimenu__flyout,
+  .ultimenu--hover.ultimenu--dark li .ultimenu__flyout:focus-within {
+    margin-top: -1px;
+  }
+}

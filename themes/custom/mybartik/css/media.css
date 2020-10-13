@@ -1,0 +1,114 @@
+@media (min-width: 851px) {
+    .layout-container {
+	max-width: 100%;
+    }
+    #block-mobilelogo {
+	display: none;
+    }
+    .region-primary-menu {
+	position: absolute;
+	top: 3em;
+	right: 0;
+	width: 100%;
+    }
+    .block-ultimenu {
+	text-align: right;
+    }
+    .block-ultimenu .ultimenu__item.last {
+	margin-right: 210px;
+    }
+    .ultimenu__item.last > .ultimenu__link {
+	border-left: 1px solid #E8112D;
+    }
+    .ultimenu.ultimenu--hover .ultimenu__link,
+    .ultimenu--main .ultimenu__link {
+	padding: 0 1em;
+	min-height: 30px;
+    }
+
+    #block-views-block-main-menu-blocks-block-1,
+    #block-views-block-main-menu-blocks-block-2,
+    #block-views-block-main-menu-blocks-block-3,
+    #block-views-block-main-menu-blocks-block-4 {
+	float: left;
+	width: 23%;
+
+    }
+    .path-frontpage #main-wrapper .block-views,
+    .path-taxonomy #main-wrapper .view-artist-portfolio,
+    .path-current-inventory #main-wrapper .view-in-stock,
+    .path-taxonomy #main-wrapper .view-taxonomy-term {
+
+	margin: 0 auto;
+    }
+}
+@media (max-width: 1024px) {
+    .home-page-promo .view-content {
+	max-width: 80%;
+    }
+}
+@media (max-width: 850px) {
+    #block-mybartik-branding {
+	display: none;
+    }
+    .layout-main-wrapper {
+	margin-top: 50px;
+    }
+    .search-form .form-search,
+    .region-header .search-block-form {
+	float: none;
+    }
+    #block-searchform {
+	margin-top: 1em;
+	text-align: center;
+    }
+    .form-actions .search-form__submit {
+	display: inline;
+    }
+    .mobile-hide {
+	display: none;
+    }
+    .site-footer__top .region {
+	width: 100%;
+    }
+    .view-float-image .views-field-field-promotional-image {
+	float: none;
+	margin: 0;
+	text-align: center;
+    }
+    .search-table {
+	max-width: 100%;
+	font-size: 90%;
+    }
+    .search-table h2 {
+	font-size: 120%;
+    }
+    .search-table .views-field-field-item-image {
+	width: 50%;
+    }
+    .masonry-item {
+	width: 380px;
+    }
+    .my-grid .views-row {
+	width: 49%;
+    }
+}
+@media (max-width: 451px) {
+    .masonry-item {
+	width: 100%;
+    }
+}
+@media (max-width: 414px) {
+    .home-page-promo .view-content {
+	max-width: 98%;
+    }
+    .view-content {
+	margin: 0 0.5em;
+    }
+    .home-page-promo .promo-title a {
+	font-size: 90%;
+    }
+    .my-grid .views-row {
+	width: 99%;
+    }
+}

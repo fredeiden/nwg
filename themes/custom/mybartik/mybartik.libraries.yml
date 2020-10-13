@@ -1,0 +1,14 @@
+global-styling:
+  css:
+    theme:
+      css/elements.css: {}
+      css/style.css: {}
+      css/item.css: {}
+      css/artist.css: {}
+      css/taxonomy.css: {}
+      css/media.css: {}
+      css/menu.css: {}
+global-scripts:
+  js:
+    js/ultimenu-mod.js: {}
+    

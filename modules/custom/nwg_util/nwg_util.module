@@ -1,0 +1,141 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\views\ViewExecutable;
+use \Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\Url;
+
+
+/**
+ * Implements hook_menu_local_tasks_alter
+ *
+ * Hide view tab from taxonomy edit for users other than admin.
+ *
+ * Change "View" and "Edit" tabs on taxonomy term
+ */
+function nwg_util_menu_local_tasks_alter(&$data, $route_name) {
+  if($route_name == 'entity.taxonomy_term.edit_form'){
+    if (\Drupal::currentUser()->id() != 1) {
+      unset($data['tabs'][0]['entity.taxonomy_term.canonical']);
+    }
+  } elseif ($route_name == 'entity.user.canonical' || $route_name == 'entity.user.edit_form') {
+    $data['tabs'][0]['entity.user.canonical']['#link']['title'] = 'Account Home';
+    $data['tabs'][0]['entity.user.edit_form']['#link']['title'] = 'Change Name/Password';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter
+ *
+ * Disable the artist reference field on user_form except for admin
+ */
+function nwg_util_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (\Drupal::currentUser()->id() != 1) {
+    $form['field_artist']['widget']['#attributes']['disabled'] = 'disabled';
+    $form['field_artist']['widget']['#description'] = "This field can only be changed by an administrator.  You must be you.";
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter
+ *
+ * Set default value for title and field_parent_design when design nid in url query
+ */
+function nwg_util_form_node_item_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $id_from_url = \Drupal::request()->query->get('design');
+  if (isset($id_from_url)) {
+    if (is_object($design = \Drupal::entityTypeManager()->getStorage('node')->load($id_from_url))) {
+      # Set and disable title
+      $form['title']['widget'][0]['value']['#default_value'] = $design->getTitle();
+      $form['title']['widget'][0]['value']['#attributes']['disabled'] = 'disabled';
+      $form['title']['widget'][0]['value']['#description'] = "This field is automatically set.";
+
+      # Set and disable parent design id
+      $form['field_parent_design']['widget'][0]['target_id']['#default_value'] = $design;
+      $form['field_parent_design']['widget'][0]['target_id']['#attributes']['disabled'] = 'disabled';
+      $form['field_parent_design']['widget'][0]['target_id']['#description'] = "This field is automatically set";
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter
+ *
+ * A furniture node is the parent of 1 or more item nodes.
+ * If any of the child notes is published, do not allow the parent to be unpublished.
+ */
+function nwg_util_form_node_furniture_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $node = $form_state->getFormObject()->getEntity();
+
+  if ($node->isPublished()) {
+    if (nwg_util_design_has_published_items($node->id())) {
+      $message = "Status changes disabled because design has published items";
+      $form['status']['widget']['value']['#attributes']['disabled'] = 'disabled';
+      $form['status']['widget']['value']['#description'] = \Drupal\Core\Field\FieldFilteredMarkup::create(t($message));
+    }
+  }
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter
+ *
+ * An item node is the child of a furniture node.
+ * If the parent node is not published, do not allow the child to be published.
+ */
+function nwg_util_form_node_item_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $item = $form_state->getFormObject()->getEntity();
+
+  if (! $item->isPublished()) {
+    $design = \Drupal::entityTypeManager()->getStorage('node')->load($item->field_parent_design->getValue()[0]['target_id']);
+    if (! $design->isPublished()) {
+      $message = "This item cannot be published until the parent design is published";
+      $form['status']['widget']['value']['#attributes']['disabled'] = 'disabled';
+      $form['status']['widget']['value']['#description'] = \Drupal\Core\Field\FieldFilteredMarkup::create(t($message));
+    }
+  }
+
+  // do extra work after submit
+  $form['actions']['submit']['#submit'][] = 'nwg_util_item_edit_submit_handler';
+
+}
+
+/**
+ * Submit handler for node_item_edit_form
+ *
+ * When the last child item of a parent design is unpublished, unpublish the parent and print a notice
+ */
+function nwg_util_item_edit_submit_handler($form, FormStateInterface $form_state) {
+  $design_id = $form_state->getValue('field_parent_design')[0]['target_id'];
+  if (! nwg_util_design_has_published_items($design_id)) {
+    $design = \Drupal::entityTypeManager()->getStorage('node')->load($design_id);
+    $design->setPublished(FALSE);
+    $design->save();
+    $message = 'This was the last published item for the parent design. The design itself has been automatically unpublished.';
+    \Drupal::messenger()->addMessage($message);
+  }
+}
+
+/**
+ * Utility function to determine if any of a design's child items are published
+ */
+function nwg_util_design_has_published_items($design) {
+
+  $connection = \Drupal\Core\Database\Database::getConnection();
+  $result = $connection->query("SELECT n.status FROM {node__field_parent_design} d, {node_field_data} n WHERE d.entity_id = n.nid AND d.field_parent_design_target_id = :nid", [
+             ':nid' => $design,
+  ]);
+  if ($result) {
+    while ($row = $result->fetchAssoc()) {
+      if ($row['status'] == 1) {
+        // Found a published item
+        return TRUE;
+      }
+    }
+  }
+
+  return FALSE;
+}

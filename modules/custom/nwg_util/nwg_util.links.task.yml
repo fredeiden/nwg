@@ -1,0 +1,12 @@
+nwg_portfolio.form:
+  route_name: nwg_portfolio.form
+  title: 'Sort'
+  base_route: view.portfolio.page_1
+  weight: 10
+  class: '\Drupal\nwg_util\Plugin\Menu\LocalTask\PortfolioTab'
+nwg_pricing.form:
+  route_name: nwg_pricing.form
+  title: 'Pricing'
+  base_route: view.portfolio.page_1
+  weight: 5
+  class: '\Drupal\nwg_util\Plugin\Menu\LocalTask\PortfolioTab'

@@ -1,0 +1,5 @@
+name: NWG Utilities
+type: module
+description: Hooks and such
+package: Custom
+core: 8.x

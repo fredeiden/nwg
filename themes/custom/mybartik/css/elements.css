@@ -1,0 +1,32 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a, a:hover, a:visited {
+    border-bottom: none;
+}
+a, a:visited {
+    color: #222;
+}
+a:hover,
+a:active,
+a:focus {
+    color: #666;
+}
+.block-field-blocknodepagetitle,
+h1 {
+    margin: 0;
+}
+.page-title {
+    line-height: 1.75em;
+}
+.views-field-field-artist h1 {
+    margin: 0;
+}
+.block-field-blocknodepagetitle, h1, h2, h3, .ultimenu--nwg .ultimenu__link {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}

@@ -1,0 +1,9 @@
+<?php
+/**
+ * Implements hook_preprocess_html().
+ */
+function mybartik_preprocess_html(&$variables) {
+  if ($term = \Drupal::routeMatch()->getParameter('taxonomy_term')) {
+    $variables['attributes']['class'][] = 'taxonomy-bundle-' . $term->bundle();
+  }
+}
