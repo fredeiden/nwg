@@ -1,0 +1,22 @@
+diff --git a/core/lib/Drupal/Core/Render/Element/Table.php b/core/lib/Drupal/Core/Render/Element/Table.php
+index c6c08b1..57892d4 100644
+--- a/core/lib/Drupal/Core/Render/Element/Table.php
++++ b/core/lib/Drupal/Core/Render/Element/Table.php
+@@ -338,7 +338,7 @@ class Table extends FormElement {
+    * @see drupal_attach_tabledrag()
+    */
+   public static function preRenderTable($element) {
+-    foreach (Element::children($element) as $first) {
++    foreach (Element::children($element, TRUE) as $first) {
+       $row = ['data' => []];
+       // Apply attributes of first-level elements as table row attributes.
+       if (isset($element[$first]['#attributes'])) {
+@@ -347,7 +347,7 @@ class Table extends FormElement {
+       // Turn second-level elements into table row columns.
+       // @todo Do not render a cell for children of #type 'value'.
+       // @see https://www.drupal.org/node/1248940
+-      foreach (Element::children($element[$first]) as $second) {
++      foreach (Element::children($element[$first], TRUE) as $second) {
+         // Assign the element by reference, so any potential changes to the
+         // original element are taken over.
+         $column = ['data' => &$element[$first][$second]];
