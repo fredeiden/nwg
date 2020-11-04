@@ -36,10 +36,11 @@ class NWGPricingForm extends FormBase {
       );
 
       $designs = \Drupal::entityQuery('node')
-            ->condition('type', 'furniture', '=')
-            ->condition('status', 1, '=')
+               ->condition('type', 'furniture', '=')
+               ->condition('status', 1, '=')
                ->condition('field_artist', $user->get('field_artist')->target_id)
-            ->execute();
+               ->sort('title', 'ASC')
+               ->execute();
       $d_nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($designs);
 
       foreach ($d_nodes as $d_key => $d_value) {
