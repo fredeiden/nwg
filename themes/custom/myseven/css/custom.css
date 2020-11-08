@@ -7,6 +7,9 @@ table caption {
 #block-usermenu {
     float: right;
 }
+.content-header {
+    padding: 0;
+}
 .view-portfolio .view-header {
     padding-top: 20px;
     text-align: right;
@@ -88,7 +91,10 @@ table caption {
 .menu--user ul li {
     list-style-type: none;
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 0.4em;
+}
+.menu--user ul li a {
+    color: #000;
 }
 .account-block {
     background: #e0e0d8;

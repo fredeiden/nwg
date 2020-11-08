@@ -33,9 +33,24 @@ body {
     z-index: 9999;
 }
 .region-header .block:not(.site-branding) {
-    margin: 3em 0 0;
+    margin-top: 3.5em;
 }
-
+.region-secondary-menu {
+    background: #e0e0d8;
+    width: 30%;
+    position: absolute;
+    right: 0;
+}
+.region-secondary-menu .menu {
+    margin-right: 2.5em;
+}
+.region-secondary-menu .menu-item a,
+.region-secondary-menu .menu-item a.is-active {
+    color: #000;
+}
+.region-secondary-menu .menu a {
+    padding: 0.4em;
+}
 .site-footer, .site-footer ul {
     text-align: center;
 }
@@ -287,4 +302,7 @@ body {
 .page-node-type-article .region-content {
     text-align: center;
     margin: 0 0.5em;
+}
+.user-login-form {
+    margin: 0 2.5em;
 }
