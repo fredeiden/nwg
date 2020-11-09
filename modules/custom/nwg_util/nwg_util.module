@@ -1,10 +1,34 @@
 <?php
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\views\ViewExecutable;
-use \Drupal\Core\Form\FormStateInterface;
-use \Drupal\Core\Url;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
+/**
+ *
+ * Implements hook_ENTITY_TYPE_view
+ *
+ * For product pages, redirect to item page when there is only a single item.
+ */
+function nwg_util_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  # Query to determine all item nodes that reference this product node
+  $items = \Drupal::entityQuery('node')
+         ->condition('type', 'item', '=')
+         ->condition('status', 1, '=')
+         ->condition('field_parent_design', $entity->id())
+         ->execute();
+
+  # If this has only 1 item referencing it, then redirect to the item page
+  if (count($items) == 1) {
+    $url = Url::fromUri("internal:/node/" . array_values($items)[0])->toString();
+    $response = new RedirectResponse($url);
+    $response->send();
+  }
+}
 
 /**
  * Implements hook_menu_local_tasks_alter
