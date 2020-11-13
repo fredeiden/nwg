@@ -1,6 +1,9 @@
 body {
     font-family: Verdana, Geneva, sans-serif;
 }
+.block-field-blocknodepagetitle, h1, h2, h3, .ultimenu--nwg .ultimenu__link {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -27,6 +30,7 @@ h1 {
 .views-field-field-artist h2 {
     margin: 0;
 }
-.block-field-blocknodepagetitle, h1, h2, h3, .ultimenu--nwg .ultimenu__link {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+.home-page-promo h1 {
+    font-size: 100%;
+    font-family: Verdana, Geneva, sans-serif;
 }
