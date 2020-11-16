@@ -306,3 +306,19 @@ body {
 .user-login-form {
     margin: 0 2.5em;
 }
+.mailchimp-signup-subscribe-form label {
+    display: none;
+}
+.mailchimp-signup-subscribe-form .form-actions,
+.mailchimp-signup-subscribe-form .form-item {
+    margin: 0;
+    padding: 0;
+}
+.mailchimp-signup-subscribe-form .button {
+    border-radius: 0.4em;
+    padding: 0.2em 1.2em;
+    font-size: 75%;
+}
+.mailchimp-signup-subscribe-form .form-email {
+    text-align: center;
+}

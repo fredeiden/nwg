@@ -11,4 +11,4 @@ global-styling:
 global-scripts:
   js:
     js/ultimenu-mod.js: {}
-    
+    js/mailchimp.js: {}
